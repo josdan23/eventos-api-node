@@ -6,13 +6,20 @@ const bcrypt = require('bcrypt')
 const Usuario = require('../model/usuario')
 
 
-loginRouter.post('/', async (request, response) => {
+loginRouter.post('/', async (request, response, next) => {
 
     const usuarioIngresado = request.body
 
-    const usuarioRegistrado = await Usuario.findOne({
-        username: usuarioIngresado.username 
-    })
+    let usuarioRegistrado = null
+    try {
+
+        usuarioRegistrado = await Usuario.findOne({
+            username: usuarioIngresado.username 
+        })
+    }
+    catch (e) {
+        next(e)
+    }
 
     console.log('usuario registrado', usuarioRegistrado)
  
