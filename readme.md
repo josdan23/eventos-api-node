@@ -4,6 +4,9 @@ App desarrollada según los requerimentos especificados en:
 
 https://github.com/ingenious-agency/backend-test/tree/master/instructions#requerimientos-no-funcionales
 
+#### Proyecto desplegado
+https://nameless-cliffs-04707.herokuapp.com/
+
 
 
 #### Instalación
